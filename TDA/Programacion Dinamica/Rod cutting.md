@@ -57,5 +57,29 @@ En esta implementacion, vamos a escribir recursivamente el programa guardando to
 
 [Bottom-Up]
 
+Este metodo depende en el "tamaño" del subproblema, talque resolver cualquier subproblema depende solo en resolver "pequeños" subproblemas. Primero resolvemos los subproblemas mas chicos, guardandonos los resultados de cada subproblema cuando sea resuelto. De esta manera, cuando resolvemos un subproblema en particular, ya tenemos soluciones guardadas de los subproblemas mas chicos, para que este en particular sea resuelto. Entonces cuando encaremos el problema que queremos resolver, ya vamos a tener los prerequisitos para resolverlo.
+
+Estos dos metodos tienen casi siempre la misma complejidad, a veces el metodo top-down no resuelve todos los subproblemas, por lo que nos ahorra algo de tiempo.
+
+
+![[Screenshot from 2024-05-11 13-11-52.png]]
+
+>Grafo de como seria el Rod Cut con proramacion dinamica
+```mermaid
+graph TD;
+id1((4)) --> id2((3))
+id2((3)) --> id3((2))
+id3((2)) --> id4((1))
+id4((1)) --> id5((0))
+
+id1((4)) --> id3((2))
+id1((4)) --> id4((1))
+id1((4)) --> id5((0))
+
+id2((3)) --> id4((1))
+id2((3)) --> id5((0))
+
+id3((2)) --> id5((0))
+```
 
 

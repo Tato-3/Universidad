@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "61ab2ef16144d07f",
+        "id": "33ef23ad582055d2",
         "type": "tabs",
         "children": [
           {
-            "id": "6520b3f051cd3db3",
+            "id": "9e1b7b68064b35f3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programacion Dinamica/Rod cutting.md",
+                "file": "Programacion Dinamica/Programacion Dinamica.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programacion Dinamica/Rod cutting.md",
+                "file": "Programacion Dinamica/Programacion Dinamica.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programacion Dinamica/Rod cutting.md",
+                "file": "Programacion Dinamica/Programacion Dinamica.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programacion Dinamica/Rod cutting.md"
+                "file": "Programacion Dinamica/Programacion Dinamica.md"
               }
             }
           }
@@ -147,9 +147,11 @@
       "latex-ocr:LatexOCR": false
     }
   },
-  "active": "6520b3f051cd3db3",
+  "active": "9e1b7b68064b35f3",
   "lastOpenFiles": [
+    "Screenshot from 2024-05-11 13-11-52.png",
     "Programacion Dinamica/Programacion Dinamica.md",
+    "Programacion Dinamica/Rod cutting.md",
     "Backtrackng/Backtracking.md",
     "textgenerator/templates/default/getOutline.md",
     "textgenerator/templates/default/getTitles.md",
@@ -167,7 +169,6 @@
     "textgenerator",
     "Backtrackng",
     "Sin título.canvas",
-    "Programacion Dinamica/Rod cutting.md",
     "Programacion Dinamica"
   ]
 }
