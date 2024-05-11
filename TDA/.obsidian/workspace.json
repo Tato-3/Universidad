@@ -1,0 +1,173 @@
+{
+  "main": {
+    "id": "8fafcdbef87e035b",
+    "type": "split",
+    "children": [
+      {
+        "id": "61ab2ef16144d07f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6520b3f051cd3db3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Programacion Dinamica/Rod cutting.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9db29b36d30e7f8c",
+    "type": "split",
+    "children": [
+      {
+        "id": "3077d958d1f17652",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e0985d8915c561b9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "06ba11d90dc70793",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#ideas",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "82b37a9131717040",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "0d109931de052c50",
+    "type": "split",
+    "children": [
+      {
+        "id": "04e12e09d01ca7b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8d13925f8ec8a779",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Programacion Dinamica/Rod cutting.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "bc07eece210f584a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Programacion Dinamica/Rod cutting.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "48a270d110be7e58",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5a40ed3b02dbea95",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Programacion Dinamica/Rod cutting.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "latex-ocr:LatexOCR": false
+    }
+  },
+  "active": "6520b3f051cd3db3",
+  "lastOpenFiles": [
+    "Programacion Dinamica/Programacion Dinamica.md",
+    "Backtrackng/Backtracking.md",
+    "textgenerator/templates/default/getOutline.md",
+    "textgenerator/templates/default/getTitles.md",
+    "textgenerator/templates/default/getIdeas.md",
+    "textgenerator/templates/default/getTags.md",
+    "textgenerator/templates/default/summarizeLarge.md",
+    "textgenerator/templates/default/getParagraph.md",
+    "textgenerator/templates/default/rewrite.md",
+    "textgenerator/templates/default/simplify.md",
+    "textgenerator/templates/default/getEmailPos.md",
+    "textgenerator/templates/default/summarize.md",
+    "textgenerator/templates/default/getEmailNeg.md",
+    "textgenerator/templates/default",
+    "textgenerator/templates",
+    "textgenerator",
+    "Backtrackng",
+    "Sin título.canvas",
+    "Programacion Dinamica/Rod cutting.md",
+    "Programacion Dinamica"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "pythonPath": "python3",
+  "cacheDirPath": "/home/tato/.obsidian/plugins/latex-ocr/model_cache",
+  "delimiters": "$$",
+  "port": "50051",
+  "startServerOnLoad": true,
+  "showStatusBar": true,
+  "useLocalModel": false,
+  "hfApiKey": "",
+  "obfuscatedKey": ""
+}
