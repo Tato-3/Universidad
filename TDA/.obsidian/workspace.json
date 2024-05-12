@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "6985c7d00d067913",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Greedy/Greedy.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programacion Dinamica/Programacion Dinamica.md",
+                "file": "Greedy/Greedy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programacion Dinamica/Programacion Dinamica.md",
+                "file": "Greedy/Greedy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programacion Dinamica/Programacion Dinamica.md"
+                "file": "Greedy/Greedy.md"
               }
             }
           }
@@ -143,15 +156,16 @@
       "canvas:Crear nuevo lienzo": false,
       "daily-notes:Abrir la nota de hoy": false,
       "templates:Insertar plantilla": false,
-      "command-palette:Abrir paleta de comandos": false,
-      "latex-ocr:LatexOCR": false
+      "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "9e1b7b68064b35f3",
+  "active": "6985c7d00d067913",
   "lastOpenFiles": [
-    "Screenshot from 2024-05-11 13-11-52.png",
     "Programacion Dinamica/Programacion Dinamica.md",
+    "Greedy/Greedy.md",
+    "Greedy",
     "Programacion Dinamica/Rod cutting.md",
+    "Screenshot from 2024-05-11 13-11-52.png",
     "Backtrackng/Backtracking.md",
     "textgenerator/templates/default/getOutline.md",
     "textgenerator/templates/default/getTitles.md",

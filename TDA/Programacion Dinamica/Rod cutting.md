@@ -7,7 +7,7 @@ La vara de longtud $n$ se puede cortar en $2^{n-1}$, ya que tenemos la opcion de
 	length i | 1   2   3   4   5   6   7   8   9   10
 	price pi | 1   5   8   9   10  17  17  20  24  30
 
-En la implementacion **Top-Down** sin **programacion dinamica** se resuelve recursivamente, entonces el algoritmo toma como input un array $p[1:n]$ de los precios y un entero n, y retorna la maxima ganacia posible de una vara de longitud n, para una vara de tamaño 0 no hay ganancia posible por lo que devolvemos 0.
+En la implementacion **Top-Down** **sin** programacion dinamica se resuelve recursivamente, entonces el algoritmo toma como input un array $p[1:n]$ de los precios y un entero n, y retorna la maxima ganacia posible de una vara de longitud n, para una vara de tamaño 0 no hay ganancia posible por lo que devolvemos 0.
 
 Cut-Road(p, n)
 if $n == 0$ 
