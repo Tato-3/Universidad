@@ -4,47 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "33ef23ad582055d2",
+        "id": "f2c91a9275eba845",
         "type": "tabs",
         "children": [
           {
-            "id": "9e1b7b68064b35f3",
+            "id": "033093246b0bebe8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programacion Dinamica/Programacion Dinamica.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6985c7d00d067913",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Greedy/Greedy.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c3b78de7634df529",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Grafos.md",
+                "file": "Grafos Camino Menor.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Grafos.md",
+                "file": "Grafos Camino Menor.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Grafos.md",
+                "file": "Grafos Camino Menor.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Grafos.md"
+                "file": "Grafos Camino Menor.md"
               }
             }
           }
@@ -171,10 +146,11 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "c3b78de7634df529",
+  "active": "033093246b0bebe8",
   "lastOpenFiles": [
-    "Greedy/Greedy.md",
     "Grafos.md",
+    "Grafos Camino Menor.md",
+    "Greedy/Greedy.md",
     "Grafos",
     "Programacion Dinamica/Programacion Dinamica.md",
     "Greedy",
