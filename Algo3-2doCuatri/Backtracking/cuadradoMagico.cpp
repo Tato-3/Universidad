@@ -3,106 +3,74 @@
 
 using namespace std;
 
-static bool cuadradoMagicoValido(vector<vector<int>> matriz, int m);
-int sumRow(vector<int> l);
-int sumColumn(vector<vector<int>> matriz, int j);
+void cuadradoMagico(vector<vector<int>>& matriz, vector<bool>& usado, int i, int j, int m);
+bool cuadradoMagicoValido(const vector<vector<int>>& matriz, int m);
 int sumDiagonalPrincipal(const vector<vector<int>>& matriz);
 int sumDiagonalSecundaria(const vector<vector<int>>& matriz);
-
-void cuadradoMagico(vector<vector<int>> matriz, int i, int j, int m){
-
-    int n = matriz.size();
-    if(i == n){
-        if(cuadradoMagicoValido(matriz, m)){
-            for (int k = 0; k < matriz.size(); k++){
-                for (int h = 0; h < matriz.size(); h++){
-                    cout << matriz[k][h] << " ";
-                }
-                cout << endl;
-            }
-
-            return;
-        }else{
-            return;
-        }
-    }
-
-    int ni = (j == n - 1) ? i + 1 : i;
-    int nj = (j + 1) % n;
-
-    for(int num = 1; num < 1+(n*n); num++){
-        matriz[i][j] = num;
-        cuadradoMagico(matriz, ni, nj, m);
-        matriz[i][j] = 0;
-    }
-
-}
-
-static bool cuadradoMagicoValido(vector<vector<int>> matriz, int m){
-    bool res = true;
-    int n = matriz.size();
-    
-    if(matriz[n-1].size() != n) return false;
-    
-    vector<int> numeros(n*n);
-
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if(numeros[matriz[i][j]-1] == 1){
-                return false;
-            }
-            else{
-                numeros[matriz[i][j]-1] = 1;
-            }
-        }
-    }
-
-    for(int i = 0; i < n; i++){
-        if(m != sumRow(matriz[i])) return false;
-        if(m != sumColumn(matriz, i)) return false;
-    }
-
-    if(m != sumDiagonalPrincipal(matriz)) return false;
-    if(m != sumDiagonalSecundaria(matriz)) return false;
-
-
-    return res;
-
-}   
-
 
 int main(){
     int n;
     cin >> n;
 
-    int m = n*(n*n+1)/2;
+    int m = n * (n * n + 1) / 2;  
 
     vector<vector<int>> matriz(n, vector<int>(n, 0));
+    vector<bool> usado(n * n + 1, false);  
 
-    vector<vector<int>> ejemplo = {{1,4,5}, {2,7,9}, {3,8,6}};
-
-    bool ej = cuadradoMagicoValido(ejemplo, m);
-    cout << ej << endl;
-    //cuadradoMagico(matriz, 0, 0, m);
+    cuadradoMagico(matriz, usado, 0, 0, m);
 
     return 0;
 }
 
-
-int sumRow(vector<int> l){
-    int res = 0;
-    for(int i = 0; i < l.size(); i++){
-        res += l[i];
+void cuadradoMagico(vector<vector<int>>& matriz, vector<bool>& usado, int i, int j, int m){
+    int n = matriz.size();
+    
+    if(i == n){  
+        if(cuadradoMagicoValido(matriz, m)){
+            for (int k = 0; k < n; k++){
+                for (int h = 0; h < n; h++){
+                    cout << matriz[k][h] << " ";
+                }
+                cout << endl;
+            }
+            cout << endl;
+        }
+        return;
     }
-    return res;
+
+    int ni = (j == n - 1) ? i + 1 : i;
+    int nj = (j + 1) % n;
+
+    for(int num = 1; num <= n * n; num++){
+        if(!usado[num]){
+            matriz[i][j] = num;
+            usado[num] = true;
+            cuadradoMagico(matriz, usado, ni, nj, m);
+            usado[num] = false;  
+            matriz[i][j] = 0;    
+        }
+    }
 }
 
-int sumColumn(vector<vector<int>> matriz, int j){
-    int res = 0;
-    for(int i = 0; i < matriz.size(); i++){
-        res += matriz[j][i];
+bool cuadradoMagicoValido(const vector<vector<int>>& matriz, int m) {
+    int n = matriz.size();
+    
+    for (int i = 0; i < n; i++) {
+        int rowSum = 0, colSum = 0;
+        for (int j = 0; j < n; j++) {
+            rowSum += matriz[i][j];
+            colSum += matriz[j][i];
+        }
+        if (rowSum != m || colSum != m) {
+            return false;
+        }
     }
-    return res;
+
+    if (sumDiagonalPrincipal(matriz) != m || sumDiagonalSecundaria(matriz) != m) {
+        return false;
+    }
+
+    return true;
 }
 
 int sumDiagonalPrincipal(const vector<vector<int>>& matriz) {
