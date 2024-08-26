@@ -16,9 +16,9 @@ Ejemplo de programación dinámica : [[Rod cutting]]
 
 Cuando hablamos de programacion dinamica tenemos que entender el conjunto de subproblemas envueltos y como los subproblemas dependen de otros.
 
-Podemos pensar el grafo de arriba como una reduccion de un arbol recursiovo del metodo top-down, con todos los nodos para el mismo subproblema coalizados dentro de un solo vertice y todas las aristas directas del padre al hijo.
+Podemos pensar el grafo de arriba como una reduccion de un arbol recursiovo del metodo **top-down**, con todos los nodos para el mismo subproblema coalizados dentro de un solo vertice y todas las aristas directas del padre al hijo.
 
-En el metodo bottom-up consideramos los vertices de un grafo del subproblea en un orden talque resuelve los subproblemas $y$ adyacentes hacia un subproblema $x$ dado, antes de que x sea resuelto. 
+En el metodo **bottom-up** consideramos los vertices de un grafo del subproblea en un orden talque resuelve los subproblemas $y$ adyacentes hacia un subproblema $x$ dado, antes de que x sea resuelto. 
 
 En un algoritmo bottom-up consideramos que los vertices del grafo del subproblema estan en un orden topologico.
 

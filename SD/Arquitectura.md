@@ -43,7 +43,7 @@ Los registros pueden ser nombrados por su indice, desde x0 a x31 o su uso habitu
 
 En el lenguaje ensamblador contamos con un conjunto fijo de 32 elementos con los que operar. Al traducir un programa de un lenguaje de alto nivel a ensamblador debemos decidir en que registros alamacenar los valores de nuestras variables.
 
-En las intrucciones ensamblador puede haber valores constantes como operandos, los llamamos valores inmediatos, ya que estan en la misma instruccion. El valor puede escribirseen decimal, hexadecimal o binario. Estos valores son de **12 bits y se extiende su signo a 32 bits antes de operar**
+En las intrucciones ensamblador puede haber valores constantes como operandos, los llamamos valores inmediatos, ya que estan en la misma instruccion. El valor puede escribirse en decimal, hexadecimal o binario. Estos valores son de **12 bits y se extiende su signo a 32 bits antes de operar**
 
 >Valores inmediatos de 32 bits
 

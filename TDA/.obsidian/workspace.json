@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e1bf63e0438bad49",
+        "id": "d1049f64aaa1c220",
         "type": "tabs",
         "children": [
           {
-            "id": "3036725342cb6804",
+            "id": "8928f7346f335740",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -61,12 +61,12 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "0d109931de052c50",
@@ -139,18 +139,18 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "06ba11d90dc70793",
+  "active": "8928f7346f335740",
   "lastOpenFiles": [
+    "Programacion Dinamica/Programacion Dinamica.md",
+    "Backtrackng/Backtracking.md",
     "Sin título.md",
     "Grafos Camino Menor.md",
     "Grafos.md",
     "Greedy/Greedy.md",
     "Grafos",
-    "Programacion Dinamica/Programacion Dinamica.md",
     "Greedy",
     "Programacion Dinamica/Rod cutting.md",
     "Screenshot from 2024-05-11 13-11-52.png",
-    "Backtrackng/Backtracking.md",
     "textgenerator/templates/default/getOutline.md",
     "textgenerator/templates/default/getTitles.md",
     "textgenerator/templates/default/getIdeas.md",

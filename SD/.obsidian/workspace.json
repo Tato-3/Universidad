@@ -4,31 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "49fd928d8515f05b",
+        "id": "523ddf4008dfcc2d",
         "type": "tabs",
         "children": [
           {
-            "id": "c07be819ef8c37ab",
+            "id": "c2adace5dd59a413",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Arquitectura.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "741ba1a6f0de5f94",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Microarquitectura.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -98,7 +82,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Arquitectura.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +98,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Arquitectura.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,9 +119,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Arquitectura.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -159,9 +139,9 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "c07be819ef8c37ab",
+  "active": "c2adace5dd59a413",
   "lastOpenFiles": [
-    "Microarquitectura.md",
-    "Arquitectura.md"
+    "Arquitectura.md",
+    "Microarquitectura.md"
   ]
 }
