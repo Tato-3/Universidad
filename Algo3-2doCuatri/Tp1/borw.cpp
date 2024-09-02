@@ -3,69 +3,59 @@
 #include <algorithm>
 
 using namespace std;
+
+vector<vector<vector<int>>> memo;
+vector<int> arr;
 int INF = 1e7;
-vector<int> memo_black;
-vector<int> memo_white;
-int maximo(vector<int>& L, int i);
-int maxLista(vector<int>&L);
 
-int black(vector<int>& arr) {
-    for(int i = 1; i < arr.size(); i++){
-        for(int j = 0; j < i; j++){
-            if(arr[j] < arr[i] && memo_black[i] < memo_black[j] + 1){
-                memo_black[i] = memo_black[j] + 1;
-            }
-        }
+int borw(int i, int black, int white) {
+    int n = arr.size();
+
+    if (i == n) return 0;
+
+    if (memo[i][black + 1][white + 1] != -1) return memo[i][black + 1][white + 1];
+
+    int noAgrego = borw(i + 1, black, white);
+
+    int pintoNegro = -INF;
+    if (black == -1 || arr[black] < arr[i]) {
+        pintoNegro = borw(i + 1, i, white) + 1;
     }
-    return maxLista(memo_black);
-}
 
-int white(vector<int>& arr){
-    for(int i = 1; i < arr.size(); i++){
-        for(int j = 0; j < i; j++){
-            if(arr[j] > arr[i] && memo_white[i] < memo_white[j] + 1){
-                memo_white[i] = memo_white[j] + 1;
-            }
-        }
+    int pintoBlanco = -INF;
+    if (white == -1 || arr[i] < arr[white]) {
+        pintoBlanco = borw(i + 1, black, i) + 1;
     }
-    return maxLista(memo_white);
+
+    return memo[i][black + 1][white + 1] = max(noAgrego, max(pintoNegro, pintoBlanco));
 }
-
-
-
-int maxLista(vector<int>& L){
-    int res = 0;
-    for(int i = 0; i < L.size(); i++){
-        if(L[i] > res) res = L[i];
-    }
-    return res;
-}
-
 
 int main() {
     vector<int> res;
-    while(true){
+    while (true) {
         int n;
         cin >> n;
-        if(n == -1) break;
-        vector<int> arr(n);
+        if (n == -1) break;
 
+        arr = vector<int>(n);
         for (int i = 0; i < n; i++) {
             cin >> arr[i];
         }
 
-        memo_black = vector<int>(n, 1);
-        memo_white = vector<int>(n, 1);        
-        int asc = black(arr);
-        int des = white(arr);
+        memo = vector<vector<vector<int>>>(
+            n + 1, vector<vector<int>>(
+                n + 1, vector<int>(n + 1, -1)
+            )
+        );
 
-        res.push_back(n-asc-des);
-       
-    } 
+        int longi = borw(0, -1, -1);
 
-    for(int i = 0; i < res.size(); i++){
+        res.push_back(n - longi);
+    }
+
+    for (int i = 0; i < res.size(); i++) {
         cout << res[i] << endl;
     }
-    
+
     return 0;
 }
