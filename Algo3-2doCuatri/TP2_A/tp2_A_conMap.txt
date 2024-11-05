@@ -1,0 +1,190 @@
+#include <iostream>
+#include <vector>
+#include <tuple>
+#include <algorithm>
+#include <map>
+#include <unordered_set>
+
+using namespace std;
+
+int n;
+map<int, vector<int>> map_ady;
+
+
+struct Arista {
+    int u, v, peso, indice;
+    string tipo;
+};
+
+
+class DSU {
+    vector<int> rank, parent;
+public:
+    DSU(int n) {
+        rank.resize(n + 1, 0);
+        parent.resize(n + 1);
+        for(int i = 0; i < n + 1; i++){
+            parent[i] = i;
+        }
+    }
+ 
+    int find(int node){
+ 
+        // En caso que nodo sea el representante
+        if (node == parent[node]) return node;
+ 
+        // Hago path compression
+        return parent[node] = find(parent[node]);
+    }
+ 
+    void unite(int u, int v) {
+        int uRepresentative = find(u);
+        int vRepresentative = find(v);
+ 
+        // Si tienen el mismo representante, entonces pertenece al
+        // mismo conjunto
+        if (uRepresentative == vRepresentative) return;
+ 
+        // Actualizamos el representante segun el caso del rank
+        if (rank[uRepresentative] < rank[vRepresentative]) {
+            parent[vRepresentative] = uRepresentative;
+        } else if(rank[uRepresentative] > rank[vRepresentative]) {
+            parent[uRepresentative] = vRepresentative;
+        } else {
+            parent[vRepresentative] = uRepresentative;
+            rank[uRepresentative]++;
+        }
+    }
+};
+
+vector<bool> visited;
+vector<int> tin, low;
+int timer;
+
+void dfs(int v, int p = -1) {
+    visited[v] = true;
+    tin[v] = low[v] = timer++;
+    bool parent_skipped = false;
+    
+    for (int to : map_ady[v]) {
+        if (to == p && !parent_skipped) {
+            parent_skipped = true;
+            continue;
+        }
+        if (visited[to]) {
+            low[v] = min(low[v], tin[to]);
+        } else {
+            dfs(to, v);
+            low[v] = min(low[v], low[to]);
+            if (low[to] > tin[v]) {
+                cout << "any" << endl;
+            }
+        }
+    }
+}
+
+void find_bridges(int tamano) {
+    timer = 0;
+    visited.assign(tamano, false);
+    tin.assign(tamano, -1);
+    low.assign(tamano, -1);
+
+    for (const auto& [node, _] : map_ady) { // Recorremos las claves en el map
+        if (!visited[node]) {
+            dfs(node);
+        }
+    }
+}
+
+void kruskal(vector<Arista>& E, int n) {
+    sort(E.begin(), E.end(), [](const Arista& a, const Arista& b) {
+        return a.peso < b.peso;
+    });
+
+    DSU dsu(n);
+    vector<tuple<int, int>> aristas_AGM;
+
+    for (int i = 0; i < E.size(); i++) {
+        auto& arista = E[i];
+        if (i < E.size() - 1 && arista.peso == E[i + 1].peso) {
+            int j = i;
+            vector<tuple<int, int>> aristas_G;
+            while (j < E.size() && arista.peso == E[j].peso) {
+                aristas_G.push_back({E[j].u, E[j].v});
+                j++;
+            }
+
+            map_ady.clear();
+            // Agregar las aristas del AGM al grafo de adyacencia
+            for (auto [u, v] : aristas_AGM) {
+                int rep_u = dsu.find(u);
+                int rep_v = dsu.find(v);
+                map_ady[rep_u].push_back(rep_v);
+                map_ady[rep_v].push_back(rep_u);
+            }
+
+            // Agregar las aristas del mismo peso al grafo de adyacencia
+            for (auto [u, v] : aristas_G) {
+                int rep_u = dsu.find(u);
+                int rep_v = dsu.find(v);
+                map_ady[rep_u].push_back(rep_v);
+                map_ady[rep_v].push_back(rep_u);
+            }
+
+
+            int time_counter = 0;
+            int longi = map_ady.size();
+            // Ejecutar DFS desde cada nodo no visitado
+            find_bridges(longi);
+
+            // Marcar las aristas según el resultado del DFS
+            bool agregadas_al_AGM = false;
+            for (int h = 0; h < aristas_G.size(); h++) {
+                auto [u, v] = aristas_G[h];
+                int rep_u = dsu.find(u);
+                int rep_v = dsu.find(v);
+                if (E[i + h].tipo == "any") {
+                    dsu.unite(u, v);
+                    aristas_AGM.push_back({u, v});
+                } else {
+                    cout << "at least one" << endl;
+                    if (!agregadas_al_AGM) {
+                        dsu.unite(u, v);
+                        aristas_AGM.push_back({u, v});
+                        agregadas_al_AGM = true;
+                    }
+                }
+            }
+
+            i = j - 1;
+
+        } else if (dsu.find(arista.u) != dsu.find(arista.v)) {
+            dsu.unite(arista.u, arista.v);
+            cout << "any" << endl;
+            aristas_AGM.push_back({arista.u, arista.v});
+        }
+    }
+}
+
+int main() {
+    int m;
+    cin >> n >> m;
+    vector<Arista> lista_aristas(m);
+    for (int i = 0; i < m; i++) {
+        int nodo1, nodo2, peso_arista;
+        cin >> nodo1 >> nodo2 >> peso_arista;
+        lista_aristas[i] = {nodo1, nodo2, peso_arista, i, "none"};
+    }
+    
+    kruskal(lista_aristas, n);
+    
+    // Ordenar las aristas por su índice original para restaurar el orden
+    sort(lista_aristas.begin(), lista_aristas.end(), [](const Arista& a, const Arista& b) {
+        return a.indice < b.indice;
+    });
+
+
+
+    return 0;
+}
+
