@@ -1,0 +1,1497 @@
+
+
+----SNAPSHOT----(23 March 2025 18:44:49) Ejercicio4.image priorSource: 6722431!
+
+----STARTUP---- (28 March 2025 11:03:57) as E:\CsComputacion\Inge1\windows64\Ejercicio4.image!
+
+
+II + II!
+
+IIII - III!
+
+IIII / II!
+
+III/II!
+
+IIII+I!
+
+DenotativeObject subclass: #IIIII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #IIIII category: #Ejercicio4 stamp: 'TM 3/28/2025 11:21:40'!
+DenotativeObject subclass: #IIIII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+IIIII class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'IIIII class' category: #Ejercicio4 stamp: 'TM 3/28/2025 11:21:40'!
+IIIII class
+	instanceVariableNames: 'next previous'!
+!IIIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 11:21:40'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!IIIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 11:21:40'!
++ num
+
+	^ self previous  + num next.! !
+!IIIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 11:21:40'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!IIIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 11:21:40'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!IIIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 11:21:40'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!IIIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 11:21:40'!
+nameOfNext
+
+	^self name, 'I'.! !
+!IIIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 11:21:40'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!IIIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 11:21:41'!
+previous
+	^previous .! !
+!IIIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 11:21:41'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+DenotativeObject subclass: #RomanNumberTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Roman Numbers'!
+
+!classDefinition: #RomanNumberTest category: #'Roman Numbers' stamp: 'TM 3/28/2025 11:22:03'!
+DenotativeObject subclass: #RomanNumberTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Roman Numbers'!
+
+RomanNumberTest class
+	instanceVariableNames: ''!
+
+!classDefinition: 'RomanNumberTest class' category: #'Roman Numbers' stamp: 'TM 3/28/2025 11:22:03'!
+RomanNumberTest class
+	instanceVariableNames: ''!
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:08:56'!
+test11OneDividedByItselfReturnsOne
+
+	Assert that: I / I isEqualTo: I.! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:06:07'!
+test05SubstractionDoesNotSupportNegativeNumbers
+
+	Assert should: [ I - II ] signal: Error withDescription: I negativeNumbersNotSupportedErrorDescription.
+! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:06:43'!
+test06MultipingByOneReturnsTheSameNumber
+
+	Assert that: II * I isEqualTo: II.! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:04:51'!
+test02NumbersBiggerThanOneCanBeAdded
+
+	Assert that: II + II isEqualTo: IV.
+! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:04:33'!
+test01OnePlusAnAdderIsTheNextOfTheAdder
+
+	Assert that: I + II isEqualTo: II next.! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:05:25'!
+test03AMinuendMinusOneIsThePreviousOfTheMinuend
+
+	Assert that: II - I isEqualTo: II previous.! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:07:05'!
+test07NumbersBiggerThanOneCanBeMultiplied
+
+	Assert that: II * II isEqualTo: IV.! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:08:37'!
+test10ADivisionByOneReturnsTheDividend
+
+	Assert that: II / I isEqualTo: II.! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:07:26'!
+test08OneMultipliedByItselfReturnsOne
+
+	Assert that: I * I isEqualTo: I.! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:09:45'!
+test12CanNotDivideADividendByABiggerDivisor
+
+	Assert should: [ III /  IV ] signal: Error withDescription: II canNotDivideByABiggerNumberErrorDescription.
+
+	Assert should: [ I /  II] signal: Error withDescription: II canNotDivideByABiggerNumberErrorDescription
+! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:07:55'!
+test09NumbersBiggerThanOneCanBeDivided
+
+	Assert that: IV / II isEqualTo: II.! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'ARM 4/3/2024 19:05:42'!
+test04NumbersBiggerThanOneCanBeSubstracted
+
+	Assert that: IV - II isEqualTo: II.! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:22:09'!
+ERROR!
+!RomanNumberTest class methodsFor: 'tests' stamp: 'TM 3/28/2025 11:23:17' prior: 50541837!
+test02NumbersBiggerThanOneCanBeAdded
+
+	Assert that: II + II isEqualTo: IIII.
+! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'TM 3/28/2025 11:23:26' prior: 50541884!
+test04NumbersBiggerThanOneCanBeSubstracted
+
+	Assert that: IIII - II isEqualTo: II.! !
+
+I - II!
+!RomanNumberTest class methodsFor: 'tests' stamp: 'TM 3/28/2025 11:29:05' prior: 50541853!
+test07NumbersBiggerThanOneCanBeMultiplied
+
+	Assert that: II * II isEqualTo: IIII.! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'TM 3/28/2025 11:29:17' prior: 50541879!
+test09NumbersBiggerThanOneCanBeDivided
+
+	Assert that: IIII / II isEqualTo: II.! !
+!RomanNumberTest class methodsFor: 'tests' stamp: 'TM 3/28/2025 11:29:25' prior: 50541868!
+test12CanNotDivideADividendByABiggerDivisor
+
+	Assert should: [ III /  IIII ] signal: Error withDescription: II canNotDivideByABiggerNumberErrorDescription.
+
+	Assert should: [ I /  II] signal: Error withDescription: II canNotDivideByABiggerNumberErrorDescription
+! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TM 3/28/2025 11:29:30'!
+PASSED!
+!II class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:20:40' prior: 50539973!
+nameOfNext
+	
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+
+III next.!
+
+!methodRemoval: I class #nameOfNext stamp: 'TM 3/28/2025 12:21:12'!
+nameOfNext
+
+	^self name, 'I'.!
+
+III next.!
+
+!classRemoval: #IIIII stamp: 'TM 3/28/2025 12:22:23'!
+DenotativeObject subclass: #IIIII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classRemoval: #RomanNumberTest stamp: 'TM 3/28/2025 12:22:39'!
+DenotativeObject subclass: #RomanNumberTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Roman Numbers'!
+
+!classRemoval: #III stamp: 'TM 3/28/2025 12:22:42'!
+DenotativeObject subclass: #III
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classRemoval: #IIII stamp: 'TM 3/28/2025 12:22:43'!
+DenotativeObject subclass: #IIII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+II * II!
+
+DenotativeObject subclass: #III
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #III category: #Ejercicio4 stamp: 'TM 3/28/2025 12:22:50'!
+DenotativeObject subclass: #III
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+III class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'III class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:22:50'!
+III class
+	instanceVariableNames: 'next previous'!
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:50'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:50'!
++ num
+
+	^ self previous  + num next.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:50'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:50'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:50'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:50'!
+nameOfNext
+	
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:50'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:50'!
+previous
+	^previous .! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:50'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+DenotativeObject subclass: #IV
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #IV category: #Ejercicio4 stamp: 'TM 3/28/2025 12:22:51'!
+DenotativeObject subclass: #IV
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+IV class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'IV class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:22:51'!
+IV class
+	instanceVariableNames: 'next previous'!
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:51'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:51'!
++ num
+
+	^ self previous  + num next.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:51'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:51'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:51'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:51'!
+nameOfNext
+	
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:51'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:51'!
+previous
+	^previous .! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:22:51'!
+previous: aNumber
+
+	previous := aNumber ! !
+!II class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:27:43' prior: 50541925!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+
+III * III!
+
+DenotativeObject subclass: #IVI
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #IVI category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:06'!
+DenotativeObject subclass: #IVI
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+IVI class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'IVI class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:07'!
+IVI class
+	instanceVariableNames: 'next previous'!
+!IVI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!IVI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
++ num
+
+	^ self previous  + num next.! !
+!IVI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!IVI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!IVI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!IVI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!IVI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!IVI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
+previous
+	^previous .! !
+!IVI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+DenotativeObject subclass: #IVII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #IVII category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:07'!
+DenotativeObject subclass: #IVII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+IVII class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'IVII class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:07'!
+IVII class
+	instanceVariableNames: 'next previous'!
+!IVII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!IVII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
++ num
+
+	^ self previous  + num next.! !
+!IVII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!IVII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:07'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!IVII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!IVII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!IVII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!IVII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+previous
+	^previous .! !
+!IVII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+DenotativeObject subclass: #IVIII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #IVIII category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:08'!
+DenotativeObject subclass: #IVIII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+IVIII class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'IVIII class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:08'!
+IVIII class
+	instanceVariableNames: 'next previous'!
+!IVIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!IVIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
++ num
+
+	^ self previous  + num next.! !
+!IVIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!IVIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!IVIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!IVIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!IVIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!IVIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:08'!
+previous
+	^previous .! !
+!IVIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:09'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+DenotativeObject subclass: #IIX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #IIX category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:09'!
+DenotativeObject subclass: #IIX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+IIX class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'IIX class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:09'!
+IIX class
+	instanceVariableNames: 'next previous'!
+!IIX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:09'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!IIX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:09'!
++ num
+
+	^ self previous  + num next.! !
+!IIX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:09'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!IIX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:09'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!IIX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:09'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!IIX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:09'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!IIX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:09'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!IIX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:09'!
+previous
+	^previous .! !
+!IIX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:09'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+!classRemoval: #IVIII stamp: 'TM 3/28/2025 12:28:25'!
+DenotativeObject subclass: #IVIII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classRemoval: #IVII stamp: 'TM 3/28/2025 12:28:26'!
+DenotativeObject subclass: #IVII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classRemoval: #IVI stamp: 'TM 3/28/2025 12:28:27'!
+DenotativeObject subclass: #IVI
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classRemoval: #IIX stamp: 'TM 3/28/2025 12:28:31'!
+DenotativeObject subclass: #IIX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classRemoval: #IV stamp: 'TM 3/28/2025 12:28:34'!
+DenotativeObject subclass: #IV
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classRemoval: #III stamp: 'TM 3/28/2025 12:28:37'!
+DenotativeObject subclass: #III
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+II * II!
+
+DenotativeObject subclass: #III
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #III category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:53'!
+DenotativeObject subclass: #III
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+III class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'III class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:53'!
+III class
+	instanceVariableNames: 'next previous'!
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:53'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:53'!
++ num
+
+	^ self previous  + num next.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:53'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:53'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
+previous
+	^previous .! !
+!III class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+DenotativeObject subclass: #IV
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #IV category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:54'!
+DenotativeObject subclass: #IV
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+IV class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'IV class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:28:54'!
+IV class
+	instanceVariableNames: 'next previous'!
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
++ num
+
+	^ self previous  + num next.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:54'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:55'!
+previous
+	^previous .! !
+!IV class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:28:55'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+IV next.!
+
+DenotativeObject subclass: #V
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #V category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:00'!
+DenotativeObject subclass: #V
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+V class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'V class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:00'!
+V class
+	instanceVariableNames: 'next previous'!
+!V class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:00'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!V class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:00'!
++ num
+
+	^ self previous  + num next.! !
+!V class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:00'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!V class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:01'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!V class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:01'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!V class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:01'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!V class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:01'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!V class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:01'!
+previous
+	^previous .! !
+!V class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:01'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+V + V!
+
+DenotativeObject subclass: #VI
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #VI category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:06'!
+DenotativeObject subclass: #VI
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+VI class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'VI class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:06'!
+VI class
+	instanceVariableNames: 'next previous'!
+!VI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:06'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!VI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:06'!
++ num
+
+	^ self previous  + num next.! !
+!VI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!VI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!VI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!VI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!VI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!VI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+previous
+	^previous .! !
+!VI class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+DenotativeObject subclass: #VII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #VII category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:07'!
+DenotativeObject subclass: #VII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+VII class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'VII class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:07'!
+VII class
+	instanceVariableNames: 'next previous'!
+!VII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!VII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
++ num
+
+	^ self previous  + num next.! !
+!VII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!VII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!VII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!VII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:07'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!VII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!VII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+previous
+	^previous .! !
+!VII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+DenotativeObject subclass: #VIII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #VIII category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:08'!
+DenotativeObject subclass: #VIII
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+VIII class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'VIII class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:08'!
+VIII class
+	instanceVariableNames: 'next previous'!
+!VIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!VIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
++ num
+
+	^ self previous  + num next.! !
+!VIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!VIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!VIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!VIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!VIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!VIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+previous
+	^previous .! !
+!VIII class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+DenotativeObject subclass: #IX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #IX category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:08'!
+DenotativeObject subclass: #IX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+IX class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'IX class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:08'!
+IX class
+	instanceVariableNames: 'next previous'!
+!IX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:08'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!IX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
++ num
+
+	^ self previous  + num next.! !
+!IX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!IX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!IX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!IX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!IX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!IX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
+previous
+	^previous .! !
+!IX class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+DenotativeObject subclass: #X
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+!classDefinition: #X category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:09'!
+DenotativeObject subclass: #X
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio4'!
+
+X class
+	instanceVariableNames: 'next previous'!
+
+!classDefinition: 'X class' category: #Ejercicio4 stamp: 'TM 3/28/2025 12:29:09'!
+X class
+	instanceVariableNames: 'next previous'!
+!X class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
+* aNum
+
+	aNum = I ifTrue: [^self].
+	^ self + aNum * aNum previous.! !
+!X class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
++ num
+
+	^ self previous  + num next.! !
+!X class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
+- aNum
+
+	self <= aNum ifTrue: [^nil].
+	aNum = I ifTrue: [^ self previous.].
+	^ self previous - aNum previous.! !
+!X class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
+/ aNum
+
+    aNum <= self ifFalse: [^ nil].
+    aNum = I ifTrue: [^ self]. 
+    self = aNum ifTrue: [^ I].
+	aNum <= (self - aNum) ifFalse: [^I]. 
+    ^ ((self - aNum) / aNum) + I.
+! !
+!X class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:09'!
+<= aNum
+	
+	aNum = I ifTrue:[^false ].
+	^ self previous <= aNum previous.! !
+!X class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:10'!
+nameOfNext
+	(self name endsWith: 'IX') ifTrue: [^(self name withoutSuffix: 'IX'), 'X'].
+	(self name endsWith: 'VIII') ifTrue: [^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue: [^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue: [^(self name withoutSuffix: 'III'), 'IV'].
+	^self name, 'I'.! !
+!X class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:10'!
+next
+	
+	|nombre|
+	nombre := self nameOfNext.
+	
+	next := Smalltalk at: nombre asSymbol ifAbsent: [II  cloneNamed: nombre.].
+	next previous: self. 
+	
+	^next.! !
+!X class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:10'!
+previous
+	^previous .! !
+!X class methodsFor: '-- all --' stamp: 'TM 3/28/2025 12:29:10'!
+previous: aNumber
+
+	previous := aNumber ! !
+
+X previous !
+
+X - I!
+!II class methodsFor: '--** private fileout/in **--' stamp: 'TM 3/28/2025 12:30:24' overrides: 50497016!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := III.
+	previous := I.! !
+!III class methodsFor: '--** private fileout/in **--' stamp: 'TM 3/28/2025 12:30:24' overrides: 50497016!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := IV.
+	previous := II.! !
+!IV class methodsFor: '--** private fileout/in **--' stamp: 'TM 3/28/2025 12:30:24' overrides: 50497016!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := V.
+	previous := III.! !
+!IX class methodsFor: '--** private fileout/in **--' stamp: 'TM 3/28/2025 12:30:24' overrides: 50497016!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := X.
+	previous := VIII.! !
+!V class methodsFor: '--** private fileout/in **--' stamp: 'TM 3/28/2025 12:30:24' overrides: 50497016!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := VI.
+	previous := IV.! !
+!VI class methodsFor: '--** private fileout/in **--' stamp: 'TM 3/28/2025 12:30:24' overrides: 50497016!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := VII.
+	previous := V.! !
+!VII class methodsFor: '--** private fileout/in **--' stamp: 'TM 3/28/2025 12:30:24' overrides: 50497016!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := VIII.
+	previous := VI.! !
+!VIII class methodsFor: '--** private fileout/in **--' stamp: 'TM 3/28/2025 12:30:24' overrides: 50497016!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := IX.
+	previous := VII.! !
+!X class methodsFor: '--** private fileout/in **--' stamp: 'TM 3/28/2025 12:30:24' overrides: 50497016!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := III.
+	previous := IX.! !
+
+!methodRemoval: II class #initializeCollaboratorsFromFile stamp: 'TM 3/28/2025 12:30:24'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := III.
+	previous := I.!
+
+!methodRemoval: III class #initializeCollaboratorsFromFile stamp: 'TM 3/28/2025 12:30:25'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := IV.
+	previous := II.!
+
+!methodRemoval: IV class #initializeCollaboratorsFromFile stamp: 'TM 3/28/2025 12:30:25'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := V.
+	previous := III.!
+
+!methodRemoval: IX class #initializeCollaboratorsFromFile stamp: 'TM 3/28/2025 12:30:25'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := X.
+	previous := VIII.!
+
+!methodRemoval: V class #initializeCollaboratorsFromFile stamp: 'TM 3/28/2025 12:30:25'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := VI.
+	previous := IV.!
+
+!methodRemoval: VI class #initializeCollaboratorsFromFile stamp: 'TM 3/28/2025 12:30:25'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := VII.
+	previous := V.!
+
+!methodRemoval: VII class #initializeCollaboratorsFromFile stamp: 'TM 3/28/2025 12:30:25'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := VIII.
+	previous := VI.!
+
+!methodRemoval: VIII class #initializeCollaboratorsFromFile stamp: 'TM 3/28/2025 12:30:25'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := IX.
+	previous := VII.!
+
+!methodRemoval: X class #initializeCollaboratorsFromFile stamp: 'TM 3/28/2025 12:30:25'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	next := III.
+	previous := IX.!
