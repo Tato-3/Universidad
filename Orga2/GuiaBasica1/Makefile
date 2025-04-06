@@ -1,16 +1,22 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -pedantic
-TARGET = hola
+TARGETS = hola rotarIzq
 
-all: $(TARGET)
+all: $(TARGETS)
 
-$(TARGET): hola.o
-	$(CC) $(CFLAGS) $^ -o $@
+hola: hola.o
+	$(CC) $(CFLAGS) hola.o -o hola
 
 hola.o: hola.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c hola.c -o hola.o
+
+rotarIzq: rotarIzq.o
+	$(CC) $(CFLAGS) rotarIzq.o -o rotarIzq
+
+rotarIzq.o: rotarIzq.c
+	$(CC) $(CFLAGS) -c rotarIzq.c -o rotarIzq.o
 
 clean:
-	rm *.o $(TARGET)
+	rm -f *.o $(TARGETS)
 
 .PHONY: all clean
