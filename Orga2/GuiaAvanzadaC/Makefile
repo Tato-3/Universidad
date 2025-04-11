@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -pedantic
-TARGETS = monstruo lowToUppercase persona
+TARGETS = monstruo lowToUppercase persona listaEnlazada
 
 all: $(TARGETS)
 
@@ -22,6 +22,12 @@ persona: persona.o
 
 persona.o: persona.c
 	$(CC) $(CFLAGS) -c persona.c -o persona.o
+
+listaEnlazada: listaEnlazada.o
+	$(CC) $(CFLAGS) listaEnlazada.o -o listaEnlazada
+
+listaEnlazada.o: listaEnlazada.c
+	$(CC) $(CFLAGS) -c listaEnlazada.c -o listaEnlazada.o
 
 clean:
 	rm -f *.o $(TARGETS)
