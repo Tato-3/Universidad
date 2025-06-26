@@ -125,6 +125,7 @@ uint32_t hacer_swap(uint8_t id) {
 }
 ```
 ```
+//Esta mal esto
 void guardar_registros(uint8_t id){
     tss_t* tss = &tss_tasks[id];
     array_reg[id].eax = tss->eax;
@@ -132,6 +133,15 @@ void guardar_registros(uint8_t id){
     array_reg[id].edx = tss->edx;
     array_reg[id].edi = tss->edi;
     array_reg[id].esi = tss->esi;
+}
+//Mi version
+void guardar_registros(uint8_t id){
+    tss_t* tss = &tss_tasks[id];
+    array_reg[id].eax = *((uint32_t*)(tss->esp0 + 0x1C));
+    array_reg[id].ecx =*((uint32_t*)(tss->esp0 + 0x18));
+    array_reg[id].edx = *((uint32_t*)(tss->esp0 + 0x14));
+    array_reg[id].edi = *((uint32_t*)(tss->esp0 + 0x00));
+    array_reg[id].esi = *((uint32_t*)(tss->esp0 + 0x04));
 }
 ```
 
