@@ -374,3 +374,29 @@ void setear_uno(uint32_t cr3){
 ```
 
 Necesito mappear la dirección virtual en el sistema de paginación de la tarea para poder modificar la variable. Para no ir gastanto paginas agarro la siguiente disponible, la mappeo, escribo el valor, y la desmapeo otra vez. En las dos syscall dependiendo del resultado de hacer_swap/hacer_swap_now (o sea dependiendo de si se hizo el swap en ese momento o no) se llama a setear_uno o setear_cero. No sabía de que tamaño era la variable asi que asumi que es de 32 bits.
+
+# CORRECCIONES
+
+1.a
+Regular
+
+
+El intercambio no debe realizarse con los valores almacenados en las TSS, ya que los registros que mantiene son los del contexto de nivel 0, al ser desalojada la tarea. Además, la tarea actual tiene los registros en la TSS con valores completamente distintos. Hay que buscar los valores de los registros en la pila de nivel 0 de cada tarea. Se ve que en guardar_registros se acceden directamente los registros de la tss.
+
+1.b
+Regular
+Eso no se ejecuta nunca.
+        return valores_reg;                         ; devuelvo el array con los valores que voy a intercambiar
+        array_swap[id] = 0;                         ; t2 ya no esta esperando
+Y esto donde está definido?
+mov flag_swap, 1                <- la proxima vez que se ejecute se tiene que fijar si t2 solicitó hacer swap
+¿Cómo se qué tarea activó el flag_swap?
+
+Dónde se llama a verificar?
+
+2
+Bien-
+
+Falta chequear que la dirección CODE esté mapeada en la tarea destino.
+
+
