@@ -134,6 +134,12 @@
 - La moraleja es que tenemos que diseñar con cabeza, no aplicar los patrones a diestra y siniestra. Si lo hacemos vamos a terminar con sistemas peores, más complicados de entender y que modelan mucho peor la realidad.
 - Termina pidiéndole ayuda al lector.
 
+### [Active Variables in Smalltalk-80](https://ubadao.wordpress.com/wp-content/uploads/2013/07/active-variables-in-smalltalk-80.pdf)
+- En este texto, nos hablan sobre la implementacion de las variables activas. A diferencia de las variables pasivas, que unicamente las usamos para guardar datos, lo que buscamos con las variables activas es que cada vez que se leen o se escriban sobre ella se llame a una funcion/ se envie un mensaje para "actualizar"/cambiar algo. 
+
+- Un ejemplo que menciona el paper, es que cada vez que se cambia la temperatura, se envia un mensaje para que se actualize un grafico
+
+- Este principio de variables activas, se relaciona con el patron de diseño **Observer**
 
 ### [Modern Software Engineering](10.%20Modern%20Software%20Engineering.pdf)
 - La ingeniería del software es la aplicación de un enfoque empírico y científico para conseguir soluciones eficientes y económicas para problemas prácticos del software.
