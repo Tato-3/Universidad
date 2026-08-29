@@ -1,0 +1,57 @@
+28987 close(3)                          = 0
+28987 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\243\2\0\0\0\0\0"..., 832) = 832
+28987 close(3)                          = 0
+28987 pipe2([3, 4], 0)                  = 0
+28987 clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7c8110072a10) = 28988
+28987 close(4)                          = 0
+28987 rt_sigaction(SIGINT, {sa_handler=0x5e287c4ff3f9, sa_mask=[], sa_flags=SA_RESTORER|SA_INTERRUPT|SA_NODEFER|SA_RESETHAND|0xffffffff00000000, sa_restorer=0x7c810fe45330}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+28987 rt_sigprocmask(SIG_BLOCK, [CHLD], NULL, 8) = 0
+28987 rt_sigaction(SIGCHLD, {sa_handler=0x5e287c4ff3ee, sa_mask=[], sa_flags=SA_RESTORER|SA_INTERRUPT|SA_NODEFER|SA_RESETHAND|0xffffffff00000000, sa_restorer=0x7c810fe45330}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+28987 rt_sigprocmask(SIG_SETM19213 --- SIGTSTP {si_signo=SIGTSTP, si_code=SI_KERNEL} ---
+19214 --- SIGTSTP {si_signo=SIGTSTP, si_code=SI_KERNE17137 --- SIGTSTP {si_signo=SIGTSTP, si_code=SI_KERNEL} ---
+17138 --- SIGTSTP {si_signo=S19214 --- SIGHUP {si_signo=SIGHUP, si_code=SI_USER17377 --- SIGHUP {si_signo=SIGH17238 --- SIGHUP {si_signo=SIGHU19214 +++ killed by SIGHUP +++
+, si_uid=1000} ---
+17377 +++ killed by SIGHUP +++
+GHUP, si_code=SI_USER, si_pid=4943, si16841 --- SIGHUP {si_signo=SIGHUP, si_code=SI_USER, si_pid=4943, si_uid=1000} ---
+16841 +++ killed by SIGHUP +++
+e=SI_USER, si_pid=4943, si_19515 --- SIGHUP {si_signo=SIGHUP, si_code=SI18856 --- SIGHUP {si_signo=SIGHUP, si_code=SI_USER, si_pid=4943, si_uid=1000} ---
+18856 +++ killed by SIGHUP +++
+00} ---
+19514 --- SIGHUP {si_signo=SIGHUP, si_code=SI_USER, si_pid=4943, si_uid=1000} ---
+19514 +++ killed by SIGHUP +++
+19515 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=2930, si_uid=1000} ---
+19515 +++ killed by SIGTERM +++
+P, si_code=SI_KERNEL} ---
+19846 --- SIGTSTP {si_signo=SIGTSTP, si_code=SI_KERNEL} ---
+19845 --- SIGHUP {si_signo=SIGHUP, si_code=SI_USER, si_pid=4943, si_uid=1000} ---
+19846 --- SIGHUP {si_signo=SIGHUP, si_code=SI_USER, si_pid=4943, si_uid=10020616 --- SIGHUP {si_signo=SIGHUP, si_code=SI_USER, si_pid=4943, si_uid=1000} --22992 --- S19845 +++ killed by SIGHUP +++
+19846 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=2930, si_uid=120617 ---19846 +++ killed by SIGTERM +++
+ode=SI_USER, si_pid=2930, si_uid=1000} ---
+20617 +++ killed by SIGTERM +++
+_uid=1000} ---
+22992 +++ killed by SIGHUP +++
+22993 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=2930, si_uid=1000} --22044 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=2930, si_uid=1000} ---
+22044 +++ killed by SIGTERM +++
+---
+23623 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=2930, si_uid=1000} ---
+23623 +++ killed by SIGTERM +++
+de=SI_USER, si_pid=4943, si_uid=1000} ---
+24360 +++ killed by SIGHUP +++
+24361 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=2930, si_uid=1000} ---
+24361 +++ killed by SIGTERM +++
+- SIGINT {si_signo=SIGINT, si_27623 --- SIGTSTP {si_signo=SIGTSTP, si_code=SI_KERNEL} ---
+2726651 --- SIGHUP {si_signo=SIGHUP, si_code=SI_USER, si_pid=4943, si_uid=1000} ---
+26651 --- SIGCONT {si_signo=SIGCONT, si_code=SI_USER, si_p27624 --- SIGHUP {si_signo26651 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=2930, si_uid=1000} ---
+26651 +++ killed by SIGTERM +++
+=4943, si_uid=1000} ---
+27623 +++ killed by SIGHUP +++
+27624 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=2930, si_uid=1000} ---
+27624 +++ killed by SIGTERM +++
+IGCONT {si_signo=SIGCONT, si_code=SI_USER, si_pid=4943, si_uid=1000} ---
+27073 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=2930, si_uid=1000} ---
+27073 +++ killed by SIGTERM +++
+T_RESTARTBLOCK (Interrupted by signal)
+28987 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=28988, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+28987 write(1, "Te voy a buscar en la oscuridad."..., 33) = 33
+28987 close(3)                          = 0
+28987 +++ exited with 0 +++
